@@ -1,5 +1,6 @@
 .App {
     height: 100%;
+    min-height: 100vh;
     background-color: lightcoral;
     display: flex;
     flex-direction: column;
@@ -10,4 +11,10 @@
 .check-button {
     height: 25px;
     width: 25px;
+}
+
+hr {
+    border: none;
+    height: 3px;
+    background-color: #bd6868;
 }

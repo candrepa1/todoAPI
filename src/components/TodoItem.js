@@ -10,6 +10,7 @@ const TodoItem = (props) => {
     const handleChange = (e) => {
         setId(ids);
         setCheckedValue(e.target.checked);
+        props.update();
     };
 
     useEffect(() => {
@@ -19,18 +20,16 @@ const TodoItem = (props) => {
 
             axios.put(`${URL}/api/todo/${id}`, { isCompleted: checkedValue })
                 .then(function (response) {
-                    // handle success
                     console.log(response);
                 })
                 .catch(function (error) {
-                    // handle error
                     console.log(error);
                 })
         }
-    }, [checkedValue]);
+    }, [checkedValue, id]);
 
     return(
-        <input type="checkbox" checked={checkedValue} onChange={handleChange} className="check-button mx-2"/>
+        <input type="checkbox" checked={checkedValue} onChange={handleChange} className="status check-button mx-2"/>
     );
 }
 
