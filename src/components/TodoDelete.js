@@ -12,7 +12,7 @@ const TodoDelete = (props) => {
         const URL = 'https://todos-academlo.herokuapp.com';
 
         try {
-            const response = await axios.delete(`${URL}/api/todo/${id}`, { headers: { 'Access-Control-Allow-Origin': "*"} });
+            await axios.delete(`${URL}/api/todo/${id}`, { headers: { 'Access-Control-Allow-Origin': "*"} });
         } catch(error) {
             console.log(error);
         }
